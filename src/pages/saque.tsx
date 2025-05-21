@@ -107,7 +107,7 @@ const Saque: React.FC = () => {
         Digite sua chave PIX e Telefone para receber o pagamento.
       </p>
       
-      <div className="bg-zinc-900 rounded-xl p-4 mb-6">
+      <div className="font-poppins bg-zinc-900 rounded-xl p-4 mb-6">
         <div className="flex justify-between items-center mb-2">
           <span className="text-gray-400">Saldo disponível:</span>
           <span className="text-xl font-bold">U${balance.toFixed(2)}</span>
