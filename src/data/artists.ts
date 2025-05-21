@@ -89,7 +89,7 @@ export const faqs = [
   },
   {
     question: 'Como ganho dinheiro?',
-    answer: 'Você ganha U$0.25 por cada avaliação de artista completada. Quanto mais detalhadas suas respostas, maiores são as chances de receber bônus adicionais.'
+    answer: 'Você ganha U$9.20 por cada avaliação de artista completada. Quanto mais detalhadas suas respostas, maiores são as chances de receber bônus adicionais.'
   },
   {
     question: 'Como posso sacar meu dinheiro?',

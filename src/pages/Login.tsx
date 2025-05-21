@@ -21,7 +21,7 @@ const Login: React.FC = () => {
     }
     
     setUser(email);
-    navigate('/evaluation');
+    navigate('/Home');
   };
 
   return (
