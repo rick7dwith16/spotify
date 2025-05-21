@@ -4,7 +4,7 @@ const Logo: React.FC = () => {
   return (
     <div className="flex items-center justify-center mb-6">
       <img
-        src="/assets/spotifylogo.png"
+        src="../spotifylogo.png"
         alt="Spotify"
         style={{ height: '120px' }} // você pode mudar aqui
       />

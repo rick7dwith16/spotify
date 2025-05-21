@@ -1,10 +1,12 @@
 import React from 'react';
 import Accordion from '../components/Accordion';
 import { faqs } from '../data/artists';
+import Header from '../components/Header';
 
 const Faq: React.FC = () => {
   return (
     <div className="max-w-md mx-auto p-4 pb-24">
+      <Header />
       <h1 className="text-2xl font-bold mb-6">Perguntas Frequentes</h1>
       
       <Accordion items={faqs} />

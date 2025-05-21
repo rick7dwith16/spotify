@@ -1,51 +1,56 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { CheckCircle } from 'lucide-react'; // ícone opcional
 
-const names = [
-  'Ana Paula', 'Carlos Silva', 'Fernanda Dias', 'Lucas Souza', 'Juliana Rocha',
-  'Marcos Lima', 'Isabela Martins', 'João Vitor', 'Amanda Nunes', 'Felipe Gomes'
-]
+const nomes = [
+  'Lucas', 'Amanda', 'João', 'Mariana', 'Rafael', 'Beatriz', 'Carlos', 'Juliana',
+  'Fernando', 'Larissa', 'Gustavo', 'Camila', 'Pedro', 'Isabela', 'Thiago', 'Aline',
+  'André', 'Bruna', 'Eduardo', 'Patrícia', 'Vinícius', 'Natália', 'Ricardo', 'Sofia',
+  'Felipe', 'Gabriela', 'Daniel', 'Letícia', 'Leandro', 'Bianca', 'Henrique', 'Paula',
+  'Rodrigo', 'Daniela', 'Alexandre', 'Renata', 'Márcio', 'Tatiane', 'Diego', 'Elaine'
+];
 
-function getRandomName() {
-  return names[Math.floor(Math.random() * names.length)]
+function gerarValor() {
+  const min = 82;
+  const max = 632;
+  return (Math.random() * (max - min) + min).toFixed(2);
 }
 
-function getRandomValue() {
-  const value = Math.random() * (632 - 82) + 82
-  return value.toFixed(2).replace('.', ',') // ex: "412,56"
+function gerarNomeAleatorio() {
+  const index = Math.floor(Math.random() * nomes.length);
+  return nomes[index];
 }
 
-export default function Notification() {
-  const [visible, setVisible] = useState(true)
-  const [name, setName] = useState(getRandomName())
-  const [value, setValue] = useState(getRandomValue())
+const Notification: React.FC = () => {
+  const [visivel, setVisivel] = useState(false);
+  const [nome, setNome] = useState('');
+  const [valor, setValor] = useState('');
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(false)
+    const mostrarNotificacao = () => {
+      setNome(gerarNomeAleatorio());
+      setValor(gerarValor());
+      setVisivel(true);
+
       setTimeout(() => {
-        setName(getRandomName())
-        setValue(getRandomValue())
-        setVisible(true)
-      }, 500) // Tempo para esconder e trocar os dados
-    }, 7000) // A cada 7 segundos
+        setVisivel(false);
+      }, 5000); // Mostra por 5s
+    };
 
-    return () => clearInterval(interval)
-  }, [])
+    mostrarNotificacao(); // Mostra a primeira ao carregar
+    const intervalo = setInterval(mostrarNotificacao, 8000); // 5s visível + 3s invisível
 
-  return (
-    <div className="fixed bottom-5 left-5 z-50">
-      {visible && (
-        <div className="flex items-center gap-3 p-4 rounded-lg bg-green-100 text-green-800 shadow animate-fade-in-out">
-          <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" strokeWidth="2"
-            viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
-          <div>
-            <p className="font-semibold">Saque realizado!</p>
-            <p>{name} recebeu <strong>R$ {value}</strong></p>
-          </div>
-        </div>
-      )}
+    return () => clearInterval(intervalo);
+  }, []);
+
+  return visivel ? (
+    <div className="fixed bottom-6 left-6 bg-zinc-900 border border-zinc-800 text-white shadow-xl px-5 py-4 rounded-xl flex items-center gap-3 animate-fade-in-out z-50 w-[290px] md:w-[340px]">
+      <CheckCircle className="text-green-500" size={24} />
+      <div className="text-sm leading-tight">
+        <p className="font-medium">{nome} acabou de sacar</p>
+        <p className="text-green-400 font-semibold">R${valor}</p>
+      </div>
     </div>
-  )
-}
+  ) : null;
+};
+
+export default Notification;

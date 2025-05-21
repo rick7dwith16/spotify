@@ -4,6 +4,8 @@ import { Star, ThumbsUp, ThumbsDown, Users } from 'lucide-react';
 import Button from '../components/Button';
 import { useAppContext } from '../context/AppContext';
 import Notification from '../components/Notification';
+import HomeHeader from '../components/HomeHeader';
+
 
 const Home: React.FC = () => {
   const { balance, addToBalance, currentArtist, getRandomArtist } = useAppContext();
@@ -50,13 +52,9 @@ const Home: React.FC = () => {
 
   return (
     <div className="max-w-md mx-auto p-4 pb-24">
+      <HomeHeader />
       <Notification />
-      {/* Balance display */}
-      <div className="flex justify-end mb-4">
-        <div className="bg-zinc-900 px-4 py-2 rounded-full">
-          <span className="font-medium">U${balance.toFixed(2)}</span>
-        </div>
-      </div>
+      
 
       {/* Artist card */}
       <div className="bg-zinc-900 rounded-xl overflow-hidden mb-6 shadow-lg">

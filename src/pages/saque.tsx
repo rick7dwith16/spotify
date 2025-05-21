@@ -4,6 +4,8 @@ import Button from '../components/Button';
 import VerificationModal from '../components/VerificationModal';
 import { useAppContext } from '../context/AppContext';
 import { PixKeyType } from '../types';
+import Header from '../components/Header';
+
 
 const Saque: React.FC = () => {
   const { balance } = useAppContext();
@@ -98,6 +100,7 @@ const Saque: React.FC = () => {
 
   return (
     <div className="max-w-md mx-auto p-4 pb-24">
+      <Header />
       <h1 className="text-2xl font-bold mb-6">Saque</h1>
       
       <p className="text-gray-300 mb-6">
