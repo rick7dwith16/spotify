@@ -9,7 +9,6 @@ import Saque from './pages/saque';
 import Faq from './pages/Faq';
 import VerificationPage from './pages/Verificacao';
 
-
 // Components
 import BottomNavigation from './components/BottomNavigation';
 
