@@ -5,7 +5,7 @@ import { Music, DollarSign, HelpCircle } from 'lucide-react';
 // Pages
 import Login from './pages/Login';
 import Home from './pages/Home';
-import Saque from './pages/Saque';
+import Saque from './pages/saque';
 import Faq from './pages/Faq';
 import VerificationPage from './pages/Verificacao';
 
