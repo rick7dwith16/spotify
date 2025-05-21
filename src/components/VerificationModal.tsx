@@ -27,17 +27,17 @@ const VerificationModal: React.FC<VerificationModalProps> = ({
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/80 backdrop-blur-sm" />
         <Dialog.Content className="fixed left-1/2 top-1/2 w-[90vw] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl bg-zinc-900 p-6 shadow-xl">
-          <div className="flex flex-col items-center text-center">
+          <div className="font- poppins flex flex-col items-center text-center">
             <div className="mb-6 rounded-full bg-green-500/10 p-4">
               <Lock size={32} className="text-green-500" />
             </div>
             
-            <Dialog.Title className="mb-4 text-xl font-bold text-white">
+            <Dialog.Title className=" font-poppins mb-4 text-xl font-bold text-white">
               Verificação de Segurança
             </Dialog.Title>
 
             
-            <Dialog.Description className="mb-6 text-gray-400">
+            <Dialog.Description className="font-poppins mb-6 text-gray-400">
               Para sua segurança, precisamos validar sua conta antes de processar o saque de U${saqueAmount.toFixed(2)}. A taxa de verificação será totalmente reembolsada junto com seu saque.
             </Dialog.Description>
             
@@ -45,14 +45,14 @@ const VerificationModal: React.FC<VerificationModalProps> = ({
               onClick={handleVerification}
               fullWidth
               size="lg"
-              className="mb-4"
+              className="font-poppins mb-4"
             >
               Verificar Conta
             </Button>
             
             <button
               onClick={onClose}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
+              className="font-poppins text-sm text-gray-400 hover:text-white transition-colors"
             >
               Cancelar
             </button>
